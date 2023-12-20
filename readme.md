@@ -40,8 +40,8 @@ cp .env.example .env
 # 7. configure database
 # modified database configuration variable inside the .env file such as DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, DB_PORT
 
-# 6. run server
+# 8. run server
 python manage.py runserver
 
-# 7. visit localhost:8000
+# 9. visit localhost:8000
 ```
