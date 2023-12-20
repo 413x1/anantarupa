@@ -47,7 +47,7 @@ class PurchaseSerializer(serializers.ModelSerializer):
         user_stock = self.user_item.first().qty if self.user_item else 0 or 0
         user_balance = self.user_currency.first().amount if self.user_currency else 0 or 0
 
-        if user_stock > self.catalog.max_user_stack:
+        if user_stock >= self.catalog.max_user_stack:
             raise serializers.ValidationError({'item_id': 'Invalid item exceeds maximum stack'})
         if user_balance < self.catalog.price:
             raise serializers.ValidationError({'user_id': 'Invalid user balance not enough'})
